@@ -3,10 +3,12 @@ var Calculator = function (initial) {
   this.record = [];
 };
 
-Calculator.prototype.add = function () {
+Calculator.prototype.add = function (random) {
+  random = random || false;
+
   for(var i = 0; i < arguments.length; i++) {
     this.value += arguments[i];
-    this.record.push({method: 'add', value: arguments[i]})
+    this.record.push({method: 'add', value: arguments[i], random: random})
   }
 
   return this.value;
@@ -20,6 +22,15 @@ Calculator.prototype.sub = function () {
   }
 
   return this.value;
+};
+
+Calculator.prototype.addRandom = function () {
+  var min = 1000;
+  var max = 2000;
+
+  var num = Math.floor(Math.random() * (max - min + 1)) + min;
+
+  return this.add(num, true);
 };
 
 Calculator.prototype.bigger = function (value) {

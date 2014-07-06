@@ -6,7 +6,7 @@ describe('test user manager', function () {
   it('add valid user', function () {
     sinon.stub(Validator, 'startWith');
 
-    Validator.startWith.withArgs('a').returns(false);
+    Validator.startWith.withArgs('john', 'a').returns(false);
 
     expect(this.userManager.add('john')).to.be.true;
 
@@ -16,7 +16,7 @@ describe('test user manager', function () {
   it('add invalid user', sinon.test(function () {
     this.stub(Validator, 'startWith');
 
-    Validator.startWith.withArgs('a').returns(true);
+    Validator.startWith.withArgs('john', 'a').returns(true);
 
     expect(this.userManager.add('john')).to.be.false;
   }));

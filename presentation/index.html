@@ -121,8 +121,8 @@ calculator.sub(1, 1) //return 8
                     <section>
                         <pre><code data-trim contenteditable>
 calculator.record === [
-    {method: 'add', value: 2},
-    {method: 'add', value: 3},
+    {method: 'add', value: 2, random: false},
+    {method: 'add', value: 3, random: false},
     ...
 ]
                         </code></pre>
@@ -134,6 +134,14 @@ var calculator = new Calculator(15);
 
 calculator.bigger(40) //true
 calculator.smaller(10) //true
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code data-trim contenteditable>
+var calculator = new Calculator();
+
+calculator.addRandom() //true
                         </code></pre>
                     </section>
                 </section>

@@ -18,7 +18,7 @@ UserManager.prototype.onAdd = function (callback) {
 };
 
 UserManager.prototype.add = function (name) {
-  if (Validator.startWith('a')) {
+  if (Validator.startWith(name, 'a')) {
     return false;
   }
 

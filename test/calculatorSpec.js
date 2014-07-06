@@ -40,4 +40,18 @@ describe('test calculator', function () {
     expect(calculator.smaller(10)).to.be.true;
     expect(calculator.smaller(40)).to.be.false;
   });
+
+  it('add random', function () {
+    var calculator = new Calculator();
+
+    var mock = sinon.mock(calculator);
+
+    mock.expects('add').once().withArgs(sinon.match.number, true).returns(true);
+
+    var result = calculator.addRandom();
+
+    mock.verify();
+
+    expect(result).to.be.true;
+  });
 });
