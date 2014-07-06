@@ -29,6 +29,9 @@ UserManager.prototype.add = function (name) {
   return true;
 };
 
+UserManager.prototype.sync = function (callback) {
+  $.post('/success', this.users, callback);
+};
 
 var Validator = (function () {
   return {
