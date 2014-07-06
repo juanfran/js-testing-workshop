@@ -87,6 +87,31 @@ describe('test user manager', function () {
 
     this.userManager.sync(callback);
 
-    expect(mock.verify()).to.be.true;
+    mock.verify();
+  }));
+
+  it('sync users with time', sinon.test(function () {
+    var callback = function () {};
+    var mock = this.mock(jQuery);
+
+    this.clock = sinon.useFakeTimers();
+
+    this.userManager.add('john');
+
+    var customMatcher = sinon.match(function (users) {
+      return !!users.length;
+    });
+
+    mock.expects('post')
+      .once()
+      .withExactArgs(sinon.match.any, customMatcher, callback);
+
+    this.userManager.sync(callback, 500);
+
+    this.clock.tick(510);
+
+    mock.verify();
+
+    this.clock.restore();
   }));
 });

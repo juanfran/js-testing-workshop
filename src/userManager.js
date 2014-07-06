@@ -33,8 +33,18 @@ UserManager.prototype.add = function (name) {
   return true;
 };
 
-UserManager.prototype.sync = function (callback) {
-  $.post('/success', this.users, callback);
+UserManager.prototype.sync = function (callback, time) {
+  time = time || 0;
+
+  var launchSync = function() {
+    $.post('/success', this.users, callback);
+  }.bind(this);
+
+  if (time > 0) {
+    setTimeout(launchSync, time);
+  } else {
+    launchSync();
+  }
 };
 
 var Validator = (function () {
