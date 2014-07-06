@@ -21,6 +21,21 @@ describe('test user manager', function () {
     expect(this.userManager.add('john')).to.be.false;
   }));
 
+  it('remove user', function () {
+    var users = ['john', 'alice', 'jennifer'];
+
+    this.userManager.users = users;
+
+    this.userManager.remove('alice');
+    expect(this.userManager.users).to.have.length(2);
+
+    this.userManager.remove('john');
+    expect(this.userManager.users).to.have.length(1);
+
+    this.userManager.remove('jennifer');
+    expect(this.userManager.users).to.have.length(0);
+  });
+
   it('user callback', function () {
     var spy = sinon.spy();
     this.userManager.onAdd(spy);

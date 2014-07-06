@@ -17,6 +17,14 @@ UserManager.prototype.onAdd = function (callback) {
   this.onAddCallback = callback;
 };
 
+UserManager.prototype.remove = function (name) {
+  for (var i = 0; i < this.users.length; i++) {
+    if (name === this.users[i]) {
+      this.users.splice(i, 1);
+    }
+  }
+};
+
 UserManager.prototype.add = function (name) {
   if (Validator.startWith(name, 'a')) {
     return false;
