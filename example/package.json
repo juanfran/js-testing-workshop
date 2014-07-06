@@ -1,0 +1,16 @@
+{
+  "name": "tallerTest",
+  "version": "0.0.0",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "chai-jquery": "^1.2.1",
+    "karma": "^0.12.9",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^0.1.3",
+    "karma-html2js-preprocessor": "^0.1.0",
+    "karma-mocha": "^0.1.3",
+    "karma-sinon": "^1.0.3",
+    "mocha": "^1.18.2",
+    "sinon": "^1.9.1"
+  }
+}
