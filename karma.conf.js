@@ -15,13 +15,11 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      'test/**/*Spec.js',
-      'src/calculator.js',
-      'src/userManager.js',
-      'src/userList.js',
+      'test/fixtures/*.html',
       {pattern: 'jquery-2.1.1.js', included: true, served: true, watched: false},
-      {pattern: 'node_modules/chai-jquery/chai-jquery.js', included: true, served: true, watched: false},
-      'test/fixtures/*.html'
+      'test/**/*Spec.js',
+      'src/*.js',
+      {pattern: 'node_modules/chai-jquery/chai-jquery.js', included: true, served: true, watched: false}
     ],
 
 

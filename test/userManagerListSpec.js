@@ -1,4 +1,4 @@
-describe.only('test user list', function () {
+describe('test user list', function () {
   beforeEach(function () {
     document.body.innerHTML = window.__html__['test/fixtures/list.html'];
     userListView();
