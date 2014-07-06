@@ -16,8 +16,12 @@ module.exports = function(config) {
     // list of files / patterns to load in the browser
     files: [
       'test/**/*Spec.js',
-      'src/*.js',
-      {pattern: 'jquery-2.1.1.js', included: true, served: true, watched: false}
+      'src/calculator.js',
+      'src/userManager.js',
+      'src/userList.js',
+      {pattern: 'jquery-2.1.1.js', included: true, served: true, watched: false},
+      {pattern: 'node_modules/chai-jquery/chai-jquery.js', included: true, served: true, watched: false},
+      'test/fixtures/*.html'
     ],
 
 
@@ -30,7 +34,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-
+      '**/*.html': ['html2js']
     },
 
 

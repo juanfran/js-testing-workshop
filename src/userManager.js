@@ -7,7 +7,11 @@ var UserManager = function () {
 
 UserManager.prototype.addLog = function (text) {
   this.log.push(text);
-}
+};
+
+UserManager.prototype.get = function () {
+  return this.users;
+};
 
 UserManager.prototype.onAdd = function (callback) {
   this.onAddCallback = callback;

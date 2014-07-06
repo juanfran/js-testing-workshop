@@ -71,7 +71,7 @@ describe('test user manager', function () {
     expect(mock.verify()).to.be.true;
   }));
 
-  it.only('sync users', sinon.test(function () {
+  it('sync users', sinon.test(function () {
     var callback = function () {};
     var mock = this.mock(jQuery);
 
