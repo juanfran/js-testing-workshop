@@ -33,6 +33,12 @@ UserManager.prototype.add = function (name) {
   return true;
 };
 
+UserManager.prototype.loadRemoteUsers = function () {
+  $.get('/users', function (data) {
+    this.users = data;
+  }.bind(this));
+};
+
 UserManager.prototype.sync = function (callback, time) {
   time = time || 0;
 

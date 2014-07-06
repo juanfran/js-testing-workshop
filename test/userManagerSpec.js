@@ -71,6 +71,26 @@ describe('test user manager', function () {
     expect(mock.verify()).to.be.true;
   }));
 
+  it('load remote users', sinon.test(function () {
+        var userList = [
+          'Jimmy',
+          'Robert'
+        ];
+
+        this.server = sinon.fakeServer.create();
+
+        this.server.respondWith("GET", "/users",
+                                [200, { "Content-Type": "application/json" },
+                                 JSON.stringify(userList)]);
+
+        this.userManager.loadRemoteUsers();
+        this.server.respond();
+
+        expect(this.userManager.users).to.be.eql(userList);
+
+        this.server.restore();
+  }));
+
   it('sync users', sinon.test(function () {
     var callback = function () {};
     var mock = this.mock(jQuery);

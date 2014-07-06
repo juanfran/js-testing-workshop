@@ -195,6 +195,16 @@ userManager.log === ['jimmy added']
                         <pre><code data-trim contenteditable>
 var userManager = new UserManager();
 
+userManager.loadRemoteUsers();
+
+userManager.users === ['jimmy', 'robert']
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <pre><code data-trim contenteditable>
+var userManager = new UserManager();
+
 var syncOk = function () {
     alert('ok');
 }
