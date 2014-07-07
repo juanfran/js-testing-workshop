@@ -3,12 +3,10 @@ var Calculator = function (initial) {
   this.record = [];
 };
 
-Calculator.prototype.add = function (random) {
-  random = random || false;
-
+Calculator.prototype.add = function () {
   for(var i = 0; i < arguments.length; i++) {
     this.value += arguments[i];
-    this.record.push({method: 'add', value: arguments[i], random: false})
+    this.record.push({method: 'add', value: arguments[i]})
   }
 
   return this.value;

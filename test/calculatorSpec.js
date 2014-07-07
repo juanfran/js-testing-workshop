@@ -25,6 +25,15 @@ describe('test calculator', function () {
 
     expect(calculator.record).to.be.an('array');
     expect(calculator.record).to.have.length(4);
+
+    var result = [
+      {method: 'sub', value: 2},
+      {method: 'sub', value: 3},
+      {method: 'add', value: 3},
+      {method: 'add', value: 1}
+    ];
+
+    expect(calculator.record).to.be.eql(result);
   });
 
   it('bigger', function () {
