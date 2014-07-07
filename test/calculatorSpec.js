@@ -46,7 +46,7 @@ describe('test calculator', function () {
 
     var mock = sinon.mock(calculator);
 
-    mock.expects('add').once().withArgs(sinon.match.number, true).returns(true);
+    mock.expects('add').once().withArgs(sinon.match.number).returns(true);
 
     var result = calculator.addRandom();
 

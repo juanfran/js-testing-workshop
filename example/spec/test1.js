@@ -11,6 +11,15 @@ describe('calculadora', function () {
 
     })
 
+/*
+
+var calculator = new Calculator();
+
+calculator.add(2) //return 2
+calculator.add(3) //return 5
+calculator.add(3, 1, 2) //return 11
+*/
+
     it('puedo sumar', function () {
         var result1 = calculadora.sumar(2, 3);
         var result2 = calculadora.sumar(20, 32);
